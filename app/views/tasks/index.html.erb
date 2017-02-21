@@ -1,2 +1,21 @@
 <h1>Tasks#index</h1>
+<h2> My list of restaurants</h2>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li> Content <%= link_to task.content, task_path(task) %> <br>
+         Deadline <%= task.deadline %>
+         Edit <%= link_to "edit", edit_task_path(task) %>
+         Destroy <%= link_to "destroy", task_path(task), method: :delete  %>
+     </li>
+  <% end %>
+
+
+</ul>
+
+<h2> <% @tasks.each do |task|%>
+  <%= puts task %>
+  <% end %>
+
+  </h2>
 <p>Find me in app/views/tasks/index.html.erb</p>
